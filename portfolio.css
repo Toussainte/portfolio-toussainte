@@ -8,14 +8,104 @@
 }
 
 
+/* ===== FOND ULTIME PORTFOLIO 2026 - COOL & PROFESSIONNEL ===== */
 body {
     color: #ededed;
+    /* Fond principal - dégradé cosmique */
     background: 
-        linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
-        url("ff.png") no-repeat center center fixed;
-    background-size: cover;
+        linear-gradient(145deg, #0c1227 0%, #1a1f3d 40%, #2a2f5a 100%),
+        /* Nebuleuse cyan subtile */
+        radial-gradient(ellipse 60% 80% at 15% 25%, rgba(0,239,255,0.25) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 60% at 75% 75%, rgba(0,239,255,0.18) 0%, transparent 50%),
+        /* Grille tech discrète */
+        linear-gradient(90deg, transparent 79px, rgba(0,239,255,0.08) 80px, transparent 81px),
+        linear-gradient(rgba(0,239,255,0.06) 79px, transparent 80px, rgba(0,239,255,0.06) 81px);
+    background-size: 100% 100%, auto, auto, 100px 100px, 100px 100px;
     overflow-x: hidden;
+    position: relative;
 }
+
+/* ===== AURA PRINCIPALE - Rotation lente élégante ===== */
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: 
+        conic-gradient(from 0deg at 25% 35%, rgba(0,239,255,0.22) 0deg, transparent 120deg),
+        conic-gradient(from 180deg at 70% 70%, rgba(0,212,255,0.18) 0deg, transparent 90deg);
+    animation: rotateCosmic 50s linear infinite reverse;
+    z-index: -1;
+}
+
+/* ===== PARTICULES TECH - Mouvement flottant ===== */
+body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: 
+        radial-gradient(circle at 20% 15%, rgba(0,239,255,0.6) 1px, transparent 1px),
+        radial-gradient(circle at 80% 85%, rgba(0,212,255,0.5) 1.5px, transparent 1.5px),
+        radial-gradient(circle at 55% 45%, rgba(0,239,255,0.4) 0.8px, transparent 0.8px),
+        radial-gradient(circle at 10% 75%, rgba(0,212,255,0.7) 1px, transparent 1px);
+    background-size: 90px 70px;
+    animation: particlesFloat 35s ease-in-out infinite;
+    z-index: -1;
+}
+
+/* ===== SCAN LINES DISCRETES ===== */
+body > .scan-lines {
+    position: fixed;
+    inset: 0;
+    background-image: 
+        linear-gradient(transparent 48%, rgba(0,239,255,0.03) 49%, rgba(0,239,255,0.03) 51%, transparent 52%);
+    background-size: 100% 4px;
+    animation: scanMove 8s linear infinite;
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* ===== ANIMATIONS COOL & FLUIDES ===== */
+@keyframes rotateCosmic {
+    0% { transform: rotate(0deg) scale(1); }
+    50% { transform: rotate(180deg) scale(1.03); }
+    100% { transform: rotate(360deg) scale(1); }
+}
+
+@keyframes particlesFloat {
+    0%, 100% { 
+        transform: translateY(0px) scale(1); 
+        opacity: 0.7; 
+    }
+    33% { 
+        transform: translateY(-12px) scale(1.06); 
+        opacity: 1; 
+    }
+    66% { 
+        transform: translateY(-8px) scale(1.03); 
+        opacity: 0.85; 
+    }
+}
+
+@keyframes scanMove {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(100px); }
+}
+
+/* ===== RESPONSIVE FOND INTELLIGENT ===== */
+@media (max-width: 768px) {
+    body {
+        background-size: 100% 100%, auto, auto, 70px 70px, 70px 70px;
+    }
+    body::after { background-size: 70px 55px; }
+}
+
+@media (max-width: 480px) {
+    body {
+        background-size: 100% 100%, auto, auto, 50px 50px, 50px 50px;
+    }
+    body::after { background-size: 60px 45px; }
+}
+
 
 
 /* ===== HEADER ===== */
